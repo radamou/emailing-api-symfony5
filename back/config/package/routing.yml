@@ -1,0 +1,9 @@
+sympl_secure_email:
+  resource: '../../Security'
+  type: annotation
+  prefix: /
+
+sympl_email:
+  resource: '../../Application/'
+  type: annotation
+  prefix: api

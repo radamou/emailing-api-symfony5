@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+  font-family: 'Montserrat-Regular', 'Helvetica', 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 100%;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.MuiToolbar-dense {
+  height: 60px;
+  background-color: white;
+  color: black;
+  box-shadow: none;
+}
+
+.MuiDrawer-docked {
+  background-color: white;
+}
+
+header{
+  box-shadow: none;
+}

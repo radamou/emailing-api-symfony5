@@ -1,0 +1,10 @@
+<?php
+
+declare(strict_types=1);
+
+namespace SymplBundle\Emailing\Tests\Functional;
+
+class Token
+{
+    const SAS_DAT_JWT = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE1NzMzMTQ4NTIsImp0aSI6ImEyZDY5MzYyZDU2ZTQxMzlhYWY1ZjQ3NzAxOTBhNGQxNzY2MzY1MzM2YjcyZTNiOTE5OTk5OTdjYjc2ZDIzYzgiLCJleHRlcm5hbF9pZCI6MTE3LCJ0eXBlIjoicHJvZmVzc2lvbmFsIiwiY29tcGFueV9pZCI6MX0.H-UFyA2XTJBuBWSlrQmQB3T7VTxapxD37PknTk4ss8gC-edAcLFPrOf7u3PwO-MotIS5rDURZLiHPnJnBqqYMB4sqA15_SvV6F6-Cd-Gg3WpoP0o8fn1_Klbs9_Qi5aOX0suiHL_JRkTUeEU2S8JN5LeORi0mSDto1JVOWEbHM0';
+}

@@ -1,0 +1,42 @@
+{
+  "name": "sympl/email-bundle",
+  "description": "Custom email bundle",
+  "type": "symfony-bundle",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Ramatou Adamou",
+      "email": "radamouissa@sympl.fr"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "SymplBundle\\Emailing\\": "./",
+      "SymplBundle\\": ".src/"
+    }
+  },
+  "require": {
+    "symfony/symfony": "4.3",
+    "doctrine/orm": "2.6.*",
+    "doctrine/doctrine-bundle": "1.9.*",
+    "symfony/monolog-bundle": "~3.1",
+    "sensio/framework-extra-bundle": "^5.2",
+    "doctrine/doctrine-fixtures-bundle": "~2.2",
+    "stof/doctrine-extensions-bundle": "~1.1",
+    "friendsofsymfony/rest-bundle": "^2.6",
+    "jms/serializer-bundle": "^3.4",
+    "beberlei/DoctrineExtensions": "^1.0",
+    "symfony/process": "^4.3",
+    "ramsey/uuid": "^3.9",
+    "symfony/finder": "^4.3",
+    "ramsey/uuid-doctrine": "^1.4",
+    "firebase/php-jwt": "^5.0",
+    "doctrine/doctrine-migrations-bundle": "^2.0",
+    "webmozart/assert": "^1.6"
+  },
+  "require-dev": {
+    "phpstan/phpstan": "^0.9.2",
+    "phpunit/phpunit": "^7.0",
+    "symfony/phpunit-bridge": "^4.0"
+  }
+}
