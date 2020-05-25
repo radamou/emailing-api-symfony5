@@ -1,5 +1,0 @@
-imports:
-  - { resource: "emailing/domain/command/command.yml" }
-  - { resource: "emailing/domain/factory/factory.yml" }
-  - { resource: "emailing/domain/query/query.yml" }
-  - { resource: "emailing/infrastructure/security/access_control.yml" }

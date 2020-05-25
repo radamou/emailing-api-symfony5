@@ -1,0 +1,67 @@
+version: '3.4'
+x-logging:
+  &default-logging
+  options:
+    max-size: "200k"
+    max-file: "10"
+  driver: "json-file"
+
+volumes:
+  web_app:
+    driver: local
+    driver_opts:
+      type: none
+      device: $PWD
+      o: bind
+
+networks:
+  default:
+    external:
+      name: emailing-network
+
+services:
+  server:
+    build:
+      context: docker/nginx
+      target: base
+    logging: *default-logging
+    volumes:
+      - web_app:/var/www/:cached
+    depends_on:
+      - php
+    environment:
+      VIRTUAL_HOST: server
+    ports:
+      - 8000:80
+
+  php:
+    build:
+      context: docker/php
+      target: base
+      args:
+        - IS_MAC=${IS_MAC}
+        - UID=1000
+        - GID=1000
+    logging: *default-logging
+    depends_on:
+      - db
+      - redis
+    volumes:
+      - web_app:/var/www/
+  db:
+    image: "mysql:5.7"
+    logging: *default-logging
+    restart: always
+    env_file:
+      - docker/config/.mysql.env
+    volumes:
+      - ./data:/var/lib/mysql
+      - web_app:/var/www
+    ports:
+      - 3306:3306
+
+  redis:
+    image: 'redis:latest'
+    logging: *default-logging
+    env_file:
+      - docker/config/.redis.env

@@ -1,0 +1,30 @@
+#!/bin/bash -e
+
+if [ "$#" -eq 0 ]; then
+  echo "Please provide volumes to sync.."
+  exit 1
+fi
+
+BASEDIR="$( cd "$( dirname "$0" )" && pwd )"
+DOCKER_COMPOSE=${DOCKER_COMPOSE:-docker-compose}
+
+cd $(dirname ${BASEDIR})
+
+echo -e "Stop project containers...\n"
+
+${DOCKER_COMPOSE} kill || true \
+  && ${DOCKER_COMPOSE} rm -f || true \
+  && docker-sync stop || true
+
+for VOLUME in "$@"; do
+	echo -e "Removing volume: ${VOLUME} ...\n"
+  docker volume rm ${VOLUME} || true
+done
+
+echo -e "\nSync volumes...\n"
+docker-sync start
+
+echo -e "Restarting docker...\n"
+${DOCKER_COMPOSE} up -d --remove-orphans
+
+echo -e "\033[32mSynchronisation complete !\033[0m\n"

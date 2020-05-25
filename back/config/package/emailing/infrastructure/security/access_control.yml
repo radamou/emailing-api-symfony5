@@ -1,9 +1,0 @@
-services:
-  sympl.security.voter.emailing_access_control:
-    class: SymplBundle\Emailing\Infrastructure\Security\AccessControl
-    abstract:  true
-
-  sympl.security.voter.customer_company_access_control:
-    class: SymplBundle\Emailing\Domain\Security\CustomerCompanyAccessControl
-    parent: sympl.security.voter.emailing_access_control
-    tags: ["security.voter"]
